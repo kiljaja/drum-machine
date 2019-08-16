@@ -1,0 +1,18 @@
+.drum-pad{
+  height: 60px;
+  width: 60px;
+  color: var(--white);
+  border-radius: 5px;
+  background-color: var(--drum-pad-bg-color);
+  border: 3px solid var(--drum-pad-border-color);
+  outline: none;
+}
+
+.drum-pad:hover{
+  cursor: pointer;
+}
+.drum-pad-pressed { 
+  transform: scale(.95);
+  cursor: grabbing;
+  border: 5px solid var(--drum-pad-border-color);
+}

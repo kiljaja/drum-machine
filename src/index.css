@@ -4,7 +4,13 @@
   box-sizing: border-box;
 }
 
-
+:root{
+  --drum-machine-bg-color: #060606;
+  --drum-pad-bg-color: #29282D;
+  --drum-pad-border-color: #D90D0D;
+  --white: #EFF0F4;
+  --gray: #EEEEEE;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
