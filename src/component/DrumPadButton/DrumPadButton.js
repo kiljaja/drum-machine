@@ -4,9 +4,7 @@ import "./DrumPadButton.css";
 export default class DrumPadButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isPlaying: false
-    };
+    
     this.handleClick = this.handleClick.bind(this);
     this.playSound = this.playSound.bind(this);
     this.animatePadPressed = this.animatePadPressed.bind(this);
@@ -18,8 +16,14 @@ export default class DrumPadButton extends React.Component {
   }
 
   handleClick() {
+    //do nothing if drum machine is not powered
+    if(!this.props.isPowered){
+      return;
+    }
+    this.props.setDisplayText(this.props.id);
     this.animatePadPressed();
     this.playSound();
+    
   }
   handleKeyPressed(event) {
     if (event.keyCode === this.props.keyCode) {

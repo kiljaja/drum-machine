@@ -5,11 +5,13 @@
 }
 
 :root{
-  --drum-machine-bg-color: #060606;
+  --drum-machine-bg-color: #c9c9c9;
+  /* --drum-machine-bg-color: #060606; */
   --drum-pad-bg-color: #29282D;
   --drum-pad-border-color: #D90D0D;
   --white: #EFF0F4;
   --gray: #EEEEEE;
+  --shadow-box: 0 5px 10px rgba(0,0,0, 0.19), 0 3px 3px rgba(0,0,0,0.23);
 }
 body {
   margin: 0;
