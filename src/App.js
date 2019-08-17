@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       isPowered: true,
-      displayText: 'the display',
+      displayText: 'Drum Machine',
       bank: bankOne,
       volume: 1
     };

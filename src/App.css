@@ -1,12 +1,17 @@
 #drum-machine{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5em;
   background-color: var(--drum-machine-bg-color);
-  max-width: 700px;
+  max-width: 300px;
   margin: 0 auto;
+  margin-top: 20vh;
+  padding: 20px;
+  border-radius: 5px; 
 }
 .drum-pads-container{
   display: grid;
+  margin: 0 auto;
   width: 200px;
   grid-template-columns: auto auto auto;
   grid-gap: 1em; 
@@ -17,9 +22,11 @@
   width: 150px;
   height: 30px;
   padding: 5px;
+  margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
   color: var(--white);
   border-radius: 5px;
   background-color: var(--drum-pad-bg-color);
+  box-shadow: var(--shadow-box);
 }

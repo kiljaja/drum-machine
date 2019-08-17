@@ -47,7 +47,7 @@ export default class DrumPadButton extends React.Component {
 
   render() {
     return (
-      <button className="drum-pad" onClick={this.handleClick}>
+      <button className="drum-pad" id={this.props.id} onClick={this.handleClick}>
         <h3>{this.props.keyTrigger}</h3>
         <audio
           id={this.props.keyTrigger}
