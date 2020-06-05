@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import DrumPadButton from "./component/DrumPadButton/DrumPadButton";
-import { bankOne } from "./util/soundBanks";
+import { bankOne } from "./data/sound-banks";
 
 class App extends React.Component {
   constructor(props) {
