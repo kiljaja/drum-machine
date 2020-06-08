@@ -2,9 +2,9 @@
   height: 60px;
   width: 60px;
   color: var(--white);
-  border-radius: 5px;
+  border-radius: .3rem;
   background-color: var(--drum-pad-bg-color);
-  border: 3px solid var(--drum-pad-border-color);
+  border: .2rem solid var(--drum-pad-border-color);
   outline: none;
   box-shadow: var(--shadow-box);
 }
@@ -16,5 +16,5 @@
 .drum-pad:active, .drum-pad-pressed {
   transform: scale(0.95);
   cursor: grabbing;
-  border: 5px solid var(--drum-pad-border-color);
+  border: .3rem solid var(--drum-pad-border-color);
 }

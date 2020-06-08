@@ -1,45 +1,49 @@
-import React from "react";
-import "./App.css";
-import DrumPadButton from "./component/DrumPadButton/DrumPadButton";
-import { bankOne } from "./data/sound-banks";
+import React, { useState } from 'react';
+import './App.css';
+import DrumPadButton from './component/DrumPadButton/DrumPadButton';
+import { bankOne, bankTwo } from './data/sound-banks';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isPowered: true,
-      displayText: 'Drum Machine',
-      bank: bankOne,
-      volume: 1
-    };
-    this.setDisplayText = this.setDisplayText.bind(this);
-  }
+export default function App() {
+  const [isPowered, setIsPowered] = useState(true);
+  const [displayText, setDisplayText] = useState('Drum Machine');
+  const [bank, setBank] = useState(bankOne);
+  const [volume, setVolume] = useState(1);
+  const [bankSwitch, setBankSwitch] = useState(false);
 
-  setDisplayText(displayText){
-    this.setState({displayText});
+  const toggleBanks = ()=>{
+    setBankSwitch(!bankSwitch);
+    setDisplayText(bankSwitch? "Bank One": "Bank Two")
+    const nextBank =  bankSwitch? bankOne: bankTwo;
+    setBank(nextBank);
+
   }
-  render() {
-    return (
-      <div id="drum-machine">
-        <div className="controls">
-          <p id="display">{this.state.displayText}</p>
+  return (
+    <div id="drum-machine">
+      <div className="controls">
+        <p id="display">{displayText}</p>
+
+        <div>
+          <p>Bank</p>
+          <label className="switch">
+          <input type="checkbox"  onClick={toggleBanks}/> 
+          <span className="slider round" data-bank={bankSwitch? 2: 1}></span>
+        </label>
         </div>
-        <ul className="drum-pads-container">
-          {bankOne.map(el => (
-            <DrumPadButton
-              keyTrigger={el.keyTrigger}
-              key={el.id}
-              url={el.url}
-              id={el.id}
-              setDisplayText={this.setDisplayText}
-              isPowered={this.state.isPowered}
-              keyCode={el.keyCode}
-            />
-          ))}
-        </ul>
+        
       </div>
-    );
-  }
+      <ul className="drum-pads-container">
+        {bank.map((el) => (
+          <DrumPadButton
+            keyTrigger={el.keyTrigger}
+            key={el.id}
+            url={el.url}
+            id={el.id}
+            setDisplayText={setDisplayText}
+            isPowered={isPowered}
+            keyCode={el.keyCode}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }
-
-export default App;
