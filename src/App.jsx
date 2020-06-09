@@ -17,7 +17,8 @@ export default function App() {
     setBank(nextBank);
 
   }
-  return (
+  return (<>
+    <h1 className="header-title">Drum Machine</h1>
     <div id="drum-machine">
       <div className="controls">
         <p id="display">{displayText}</p>
@@ -45,5 +46,6 @@ export default function App() {
         ))}
       </ul>
     </div>
+    </>
   );
 }
